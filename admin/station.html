@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stations</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .sidebar {
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            padding: 15px 0;
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar a:hover {
+            background-color: #ffc107;
+            color: #000;
+        }
+
+        .sidebar a.active {
+            background-color: #ffc107;
+            color: #000;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 20px;
+            background-color: #EEEEEE;
+        }
+
+        .table-wrapper {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .add-btn {
+            background-color: #ffc107;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .add-btn:hover {
+            background-color: #e0a800;
+            color: #000;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                min-height: auto;
+                padding: 10px 0;
+            }
+
+            .sidebar a {
+                font-size: 0.875rem;
+                padding: 8px 15px;
+            }
+
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .table-wrapper {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            .table {
+                font-size: 0.875rem;
+            }
+
+            footer {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .table-wrapper {
+                overflow-x: auto;
+            }
+
+            .table thead {
+                display: none;
+            }
+
+            .table tbody td {
+                display: flex;
+                justify-content: space-between;
+                border-top: 1px solid #ddd;
+                padding: 10px 5px;
+            }
+
+            .table tbody td:before {
+                content: attr(data-label);
+                font-weight: bold;
+                flex-basis: 50%;
+            }
+
+            .btn {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <div class="left-header">TAAR</div>
+            <div class="right-header">
+                <i class="bi bi-person-circle"></i>
+                <span>John Doe</span>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-2 sidebar">
+                <nav>
+                    <a href="dashboard.html"><i class="bi bi-grid"></i> Dashboard</a>
+                    <a href="station.html" class="active"><i class="bi bi-building"></i> Stations</a>
+                    <a href="cable.html"><i class="bi bi-person"></i> Cable Profile</a>
+                    <a href="products.html"><i class="bi bi-box"></i> Products</a>
+                    <a href="reports.html"><i class="bi bi-bar-chart"></i> Reports</a>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-10">
+                <div class="table-wrapper">
+                    <div class="d-flex justify-content-end mb-3">
+                        <a href="new_station.html" class="btn btn-warning add-btn">
+                            + Add New Station
+                        </a>
+                    </div>
+                    <table class="table table-responsive">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Name">Station 01</td>
+                                <td data-label="Action">
+                                    <button class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="Name">Station 02</td>
+                                <td data-label="Action">
+                                    <button class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="Name">Station 03</td>
+                                <td data-label="Action">
+                                    <button class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Footer -->
+                <footer>
+                    Copyright © 2024 TAAR
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
